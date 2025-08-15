@@ -1,3 +1,1 @@
-class Routes {
-  static const String initAuthView = '/initAuthView';
-}
+class Routes {}
