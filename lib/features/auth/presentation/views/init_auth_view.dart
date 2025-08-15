@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_center_app/core/constants/app_strings.dart';
+import 'package:medical_center_app/core/routing/routes.dart';
 import 'package:medical_center_app/core/theme/app_colors.dart';
 import 'package:medical_center_app/core/utils/context_extension.dart';
 import 'package:medical_center_app/core/widgets/custom_button.dart';
@@ -44,7 +46,9 @@ class InitAuthView extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: CustomButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.push(Routes.loginView);
+                    },
                     text: AppStrings.logIn,
                     btnColor: AppColors.primaryColor,
                     textStyle: const TextStyle(
