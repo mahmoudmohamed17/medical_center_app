@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:medical_center_app/core/constants/app_assets.dart';
 import 'package:medical_center_app/core/constants/app_strings.dart';
 import 'package:medical_center_app/core/routing/routes.dart';
 import 'package:medical_center_app/core/theme/app_colors.dart';
@@ -20,16 +21,7 @@ class InitAuthView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Spacer(),
-              Container(
-                color: AppColors.primaryColor,
-                height: context.width * 0.75,
-                width: context.width,
-                alignment: Alignment.center,
-                child: const Text(
-                  'App Splash Image Here',
-                  style: TextStyle(color: Colors.white, fontSize: 24),
-                ),
-              ),
+              Image.asset(AppAssets.imagesSplashWhite, height: context.width),
               const Spacer(flex: 2),
               Text(
                 AppStrings.welcomeToPulseCare,

@@ -1,6 +1,6 @@
 class AppAssets {
   AppAssets._();
-  
+
   static const String iconsAToZ = "assets/icons/a_to_z.svg";
 
   static const String iconsApple = "assets/icons/apple.svg";
@@ -57,7 +57,8 @@ class AppAssets {
 
   static const String iconsWallet = "assets/icons/wallet.svg";
 
-  static const String imagesDummyDoctorPic = "assets/images/dummy_doctor_pic.png";
+  static const String imagesDummyDoctorPic =
+      "assets/images/dummy_doctor_pic.png";
 
   static const String imagesDummyUserPic = "assets/images/dummy_user_pic.png";
 
