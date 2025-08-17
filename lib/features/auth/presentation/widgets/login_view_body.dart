@@ -36,7 +36,7 @@ class LoginViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 36),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 64),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
             child: SizedBox(
               width: double.infinity,
               child: CustomButton(
