@@ -14,6 +14,7 @@ class SocialAuthProvidersWidget extends StatelessWidget {
       AuthProviderModel(onTap: () {}, svgIcon: AppAssets.iconsFacebook),
       AuthProviderModel(onTap: () {}, svgIcon: AppAssets.iconsFingerprint),
     ];
+    
     return Row(
       spacing: 8,
       mainAxisAlignment: MainAxisAlignment.center,

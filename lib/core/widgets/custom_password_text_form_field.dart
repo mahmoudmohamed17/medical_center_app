@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:medical_center_app/core/theme/app_colors.dart';
 import 'package:medical_center_app/core/utils/build_border.dart';
 
@@ -55,7 +54,9 @@ class _CustomPasswordTextFormFieldState
           },
           padding: EdgeInsets.zero,
           icon: Icon(
-            _isVisible ? FontAwesomeIcons.eye : FontAwesomeIcons.eyeSlash,
+            _isVisible
+                ? Icons.visibility_outlined
+                : Icons.visibility_off_outlined,
             color: AppColors.primaryTextColor,
           ),
         ),

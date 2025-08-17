@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:medical_center_app/core/routing/routes.dart';
 import 'package:medical_center_app/features/auth/presentation/views/init_auth_view.dart';
 import 'package:medical_center_app/features/auth/presentation/views/login_view.dart';
+import 'package:medical_center_app/features/auth/presentation/views/signup_view.dart';
 
 class AppRouting {
   static final GoRouter router = GoRouter(
@@ -16,6 +17,11 @@ class AppRouting {
         path: Routes.loginView,
         builder: (BuildContext context, GoRouterState state) =>
             const LoginView(),
+      ),
+      GoRoute(
+        path: Routes.signupView,
+        builder: (BuildContext context, GoRouterState state) =>
+            const SignupView(),
       ),
     ],
   );

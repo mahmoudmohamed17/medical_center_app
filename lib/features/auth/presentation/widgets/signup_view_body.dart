@@ -3,14 +3,13 @@ import 'package:medical_center_app/core/constants/app_strings.dart';
 import 'package:medical_center_app/core/theme/app_colors.dart';
 import 'package:medical_center_app/core/widgets/custom_app_bar.dart';
 import 'package:medical_center_app/core/widgets/custom_button.dart';
-import 'package:medical_center_app/features/auth/presentation/widgets/dont_have_an_account_widget.dart';
-import 'package:medical_center_app/features/auth/presentation/widgets/forget_password_button.dart';
-import 'package:medical_center_app/features/auth/presentation/widgets/login_view_form.dart';
-import 'package:medical_center_app/features/auth/presentation/widgets/login_welcome_widget.dart';
+import 'package:medical_center_app/features/auth/presentation/widgets/already_have_an_account_widget.dart';
+import 'package:medical_center_app/features/auth/presentation/widgets/signup_terms_of_use_widget.dart';
+import 'package:medical_center_app/features/auth/presentation/widgets/signup_view_form.dart';
 import 'package:medical_center_app/features/auth/presentation/widgets/social_auth_providers_widget.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class SignupViewBody extends StatelessWidget {
+  const SignupViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,26 +17,18 @@ class LoginViewBody extends StatelessWidget {
       keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
       child: Column(
         children: [
-          const CustomAppBar(title: AppStrings.logIn),
-          const SizedBox(height: 26),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12),
-            child: LoginWelcomeWidget(),
-          ),
-          const SizedBox(height: 38),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12),
-            child: LoginViewForm(),
-          ),
-          const SizedBox(height: 8),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12),
-            child: ForgetPasswordButton(),
-          ),
+          const CustomAppBar(title: AppStrings.newAccount),
           const SizedBox(height: 36),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12),
+            child: SignupViewForm(),
+          ),
+          const SizedBox(height: 18),
+          const SignupTermsOfUseWidget(),
+          const SizedBox(height: 4),
           CustomButton(
             onPressed: () {},
-            text: AppStrings.logIn,
+            text: AppStrings.signUp,
             btnColor: AppColors.primaryColor,
             textStyle: const TextStyle(
               color: Colors.white,
@@ -57,7 +48,7 @@ class LoginViewBody extends StatelessWidget {
           const SizedBox(height: 12),
           const SocialAuthProvidersWidget(),
           const SizedBox(height: 32),
-          const DontHaveAnAccountWidget(),
+          const AlreadyHaveAnAccountWidget(),
         ],
       ),
     );

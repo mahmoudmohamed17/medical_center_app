@@ -38,9 +38,7 @@ class InitAuthView extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: CustomButton(
-                    onPressed: () {
-                      context.push(Routes.loginView);
-                    },
+                    onPressed: () => context.push(Routes.loginView),
                     text: AppStrings.logIn,
                     btnColor: AppColors.primaryColor,
                     textStyle: const TextStyle(
@@ -57,7 +55,7 @@ class InitAuthView extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: CustomButton(
-                    onPressed: () {},
+                    onPressed: () => context.push(Routes.signupView),
                     text: AppStrings.signUp,
                     btnColor: AppColors.secondaryColor,
                     textStyle: TextStyle(
