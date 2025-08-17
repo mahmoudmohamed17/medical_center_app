@@ -11,9 +11,9 @@ class MainView extends StatelessWidget {
   Widget build(BuildContext context) {
     final screens = const [
       HomeView(),
-      Text('Chats'),
-      Text('Schedule'),
-      Text('Profile'),
+      Center(child: Text('Chats')),
+      Center(child: Text('Schedule')),
+      Center(child: Text('Profile')),
     ];
 
     return BlocProvider(
