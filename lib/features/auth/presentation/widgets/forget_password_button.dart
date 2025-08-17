@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_center_app/core/constants/app_strings.dart';
+import 'package:medical_center_app/core/routing/routes.dart';
 import 'package:medical_center_app/core/theme/app_colors.dart';
 
 class ForgetPasswordButton extends StatelessWidget {
@@ -10,7 +12,7 @@ class ForgetPasswordButton extends StatelessWidget {
     return Align(
       alignment: Alignment.centerRight,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () => context.push(Routes.setPasswordView),
         style: const ButtonStyle(
           visualDensity: VisualDensity(
             horizontal: VisualDensity.minimumDensity,

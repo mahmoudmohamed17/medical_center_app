@@ -35,14 +35,20 @@ class LoginViewBody extends StatelessWidget {
             child: ForgetPasswordButton(),
           ),
           const SizedBox(height: 36),
-          CustomButton(
-            onPressed: () {},
-            text: AppStrings.logIn,
-            btnColor: AppColors.primaryColor,
-            textStyle: const TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.w500,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 64),
+            child: SizedBox(
+              width: double.infinity,
+              child: CustomButton(
+                onPressed: () {},
+                text: AppStrings.logIn,
+                btnColor: AppColors.primaryColor,
+                textStyle: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
           ),
           const SizedBox(height: 16),

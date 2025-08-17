@@ -6,6 +6,7 @@ class AppStrings {
   static const String welcome = 'Welcome';
   static const String loginWelcomeText =
       'Log in to manage your healthcare appointments and view your medical information.';
+  static const String pleaseCreateStrongPassword = 'Please create a strong password for your account. Use at least 8 characters, including numbers and symbols, to keep your account secure.';
   static const String email = 'Email';
   static const String password = 'Password';
   static const String fullName = 'Full name';

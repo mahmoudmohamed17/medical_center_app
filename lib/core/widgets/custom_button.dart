@@ -7,12 +7,14 @@ class CustomButton extends StatelessWidget {
     required this.text,
     required this.btnColor,
     required this.textStyle,
+    this.padding = 12,
     this.isShapeCircular = false,
   });
   final VoidCallback onPressed;
   final String text;
   final Color btnColor;
   final TextStyle textStyle;
+  final double padding;
   final bool isShapeCircular;
 
   @override
@@ -24,7 +26,7 @@ class CustomButton extends StatelessWidget {
         visualDensity: const VisualDensity(
           horizontal: VisualDensity.maximumDensity,
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 12),
+        padding: const EdgeInsets.all(12),
         shape: isShapeCircular ? const CircleBorder() : null,
       ),
       child: Text(text, style: textStyle),

@@ -26,14 +26,20 @@ class SignupViewBody extends StatelessWidget {
           const SizedBox(height: 18),
           const SignupTermsOfUseWidget(),
           const SizedBox(height: 4),
-          CustomButton(
-            onPressed: () {},
-            text: AppStrings.signUp,
-            btnColor: AppColors.primaryColor,
-            textStyle: const TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.w500,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 64),
+            child: SizedBox(
+              width: double.infinity,
+              child: CustomButton(
+                onPressed: () {},
+                text: AppStrings.signUp,
+                btnColor: AppColors.primaryColor,
+                textStyle: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
           ),
           const SizedBox(height: 16),
