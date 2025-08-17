@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medical_center_app/core/constants/app_assets.dart';
 import 'package:medical_center_app/core/theme/app_colors.dart';
+import 'package:medical_center_app/core/widgets/custom_icon_button.dart';
 import 'package:medical_center_app/features/auth/data/models/auth_provider_model.dart';
 
 class SocialAuthProvidersWidget extends StatelessWidget {
@@ -14,26 +14,20 @@ class SocialAuthProvidersWidget extends StatelessWidget {
       AuthProviderModel(onTap: () {}, svgIcon: AppAssets.iconsFacebook),
       AuthProviderModel(onTap: () {}, svgIcon: AppAssets.iconsFingerprint),
     ];
-    
+
     return Row(
       spacing: 8,
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: providers
           .map(
-            (item) => InkWell(
+            (item) => CustomIconButton(
               onTap: item.onTap,
-              customBorder: const CircleBorder(),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: AppColors.secondaryColor,
-                  shape: BoxShape.circle,
-                ),
-                height: 50,
-                width: 50,
-                padding: const EdgeInsets.all(12),
-                child: SvgPicture.asset(item.svgIcon, fit: BoxFit.fill),
-              ),
+              svgIcon: item.svgIcon,
+              iconColor: AppColors.primaryColor,
+              height: 50,
+              width: 50,
+              padding: 12,
             ),
           )
           .toList(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:medical_center_app/features/home/presentation/views/home_view.dart';
 import 'package:medical_center_app/features/main_view/data/managers/bottom_nav_bar_cubit/botton_nav_bar_cubit.dart';
 import 'package:medical_center_app/features/main_view/presentation/widgets/custom_bottom_nav_bar.dart';
 
@@ -9,7 +10,7 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screens = const [
-      Text('Home'),
+      HomeView(),
       Text('Chats'),
       Text('Schedule'),
       Text('Profile'),

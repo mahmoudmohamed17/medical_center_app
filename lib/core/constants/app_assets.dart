@@ -8,6 +8,8 @@ class AppAssets {
 
   static const String iconsAward = "assets/icons/award.svg";
 
+  static const String iconsBell = "assets/icons/bell.svg";
+
   static const String iconsCall = "assets/icons/call.svg";
 
   static const String iconsChating = "assets/icons/chating.svg";
