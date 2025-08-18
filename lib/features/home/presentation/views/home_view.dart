@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medical_center_app/features/home/presentation/widgets/home_doctors_list.dart';
+import 'package:medical_center_app/features/home/presentation/widgets/home_scheduler_widget.dart';
 import 'package:medical_center_app/features/home/presentation/widgets/home_view_app_bar.dart';
 import 'package:medical_center_app/features/home/presentation/widgets/home_view_search_bar.dart';
 
@@ -13,14 +15,18 @@ class HomeView extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32),
+              padding: EdgeInsets.symmetric(horizontal: 24),
               child: HomeViewAppBar(),
             ),
             SizedBox(height: 24),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32),
+              padding: EdgeInsets.symmetric(horizontal: 24),
               child: HomeViewSearchBar(),
             ),
+            SizedBox(height: 16),
+            HomeSchedulerWidget(),
+            SizedBox(height: 16),
+            Expanded(child: HomeDoctorsList()),
           ],
         ),
       ),
