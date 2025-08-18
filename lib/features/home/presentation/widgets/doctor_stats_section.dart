@@ -4,8 +4,8 @@ import 'package:medical_center_app/features/home/presentation/widgets/custom_doc
 import 'package:medical_center_app/features/home/presentation/widgets/doctor_card_info_badge.dart';
 import 'package:medical_center_app/features/home/presentation/widgets/doctor_card_question_mark_button.dart';
 
-class DoctorCardActionButtons extends StatelessWidget {
-  const DoctorCardActionButtons({super.key});
+class DoctorStatsSection extends StatelessWidget {
+  const DoctorStatsSection({super.key});
 
   @override
   Widget build(BuildContext context) {

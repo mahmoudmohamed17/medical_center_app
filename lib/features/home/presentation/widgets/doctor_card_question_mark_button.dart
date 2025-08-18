@@ -11,49 +11,113 @@ class DoctorCardQuestionMarkButton extends StatefulWidget {
 }
 
 class _DoctorCardQuestionMarkButtonState
-    extends State<DoctorCardQuestionMarkButton> {
-  bool _isTapped = false;
-
+    extends State<DoctorCardQuestionMarkButton>
+    with SingleTickerProviderStateMixin {
   OverlayEntry? _overlayEntry;
   final _layerLink = LayerLink();
+  bool _isOverlayVisible = false;
+  late AnimationController _fadeController;
+  late Animation<double> _fadeAnimation;
 
-  void _showOveraly(BuildContext context) {
-    _overlayEntry = OverlayEntry(
-      builder: (context) {
-        return CompositedTransformFollower(
-          link: _layerLink,
-          child: Positioned(
-            right: 150,
-            bottom: 150,
-            child: Material(
-              color: Colors.black,
-              borderRadius: const BorderRadius.all(Radius.circular(16)),
-              child: Container(
-                color: Colors.black,
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Hello World!',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        );
-      },
+  @override
+  void initState() {
+    super.initState();
+    _fadeController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 300),
     );
-    Overlay.of(context).insert(_overlayEntry!);
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(parent: _fadeController, curve: Curves.easeInOut),
+    );
   }
 
-  void _hideOverlay(BuildContext context) {
-    Overlay.of(context).deactivate();
+  @override
+  void dispose() {
+    _fadeController.dispose();
+    _hideOverlay();
+    super.dispose();
+  }
+
+  void _showOverlay() {
+    if (_isOverlayVisible) return;
+
+    _overlayEntry = OverlayEntry(builder: (context) => _buildOverlay());
+    Overlay.of(context).insert(_overlayEntry!);
+    _fadeController.forward();
+    setState(() {
+      _isOverlayVisible = true;
+    });
+  }
+
+  void _hideOverlay() {
+    if (!_isOverlayVisible) return;
+    _fadeController.reverse().then((_) {
+      _overlayEntry?.remove();
+      _overlayEntry = null;
+      if (mounted) {
+        setState(() {
+          _isOverlayVisible = false;
+        });
+      }
+    });
+  }
+
+  void _toggleOverylay() {
+    if (_isOverlayVisible) {
+      _hideOverlay();
+    } else {
+      _showOverlay();
+    }
+  }
+
+  Widget _buildOverlay() {
+    return CompositedTransformFollower(
+      link: _layerLink,
+      offset: const Offset(-200, -35),
+      child: AnimatedBuilder(
+        animation: _fadeController,
+        builder: (context, child) => FadeTransition(
+          opacity: _fadeAnimation,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Material(
+                color: Colors.transparent,
+                child: Container(
+                  padding: const EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    color: AppColors.secondaryColor,
+                    borderRadius: const BorderRadius.all(Radius.circular(12)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade500,
+                        blurRadius: 10,
+                        spreadRadius: 0.5,
+                        offset: const Offset(2, 2),
+                      ),
+                    ],
+                  ),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Hello World!',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   @override
@@ -61,7 +125,8 @@ class _DoctorCardQuestionMarkButtonState
     return CompositedTransformTarget(
       link: _layerLink,
       child: GestureDetector(
-        onTap: () {},
+        onTap: _toggleOverylay,
+        behavior: HitTestBehavior.translucent,
         child: Container(
           decoration: const BoxDecoration(
             color: Colors.white,
