@@ -29,7 +29,7 @@ class DoctorStatsSection extends StatelessWidget {
           spacing: 4,
           children: [
             DoctorCardQuestionMarkButton(),
-            CustomDoctorCardHearButton(),
+            CustomDoctorCardHeartButton(),
           ],
         ),
       ],

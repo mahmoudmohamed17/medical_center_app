@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:medical_center_app/core/theme/app_colors.dart';
 
-class CustomDoctorCardHeartButton extends StatefulWidget {
-  const CustomDoctorCardHeartButton({super.key});
+class CustomAddToFavButton extends StatefulWidget {
+  const CustomAddToFavButton({super.key});
 
   @override
-  State<CustomDoctorCardHeartButton> createState() =>
-      _CustomDoctorCardHeartButtonState();
+  State<CustomAddToFavButton> createState() => _CustomAddToFavButtonState();
 }
 
-class _CustomDoctorCardHeartButtonState
-    extends State<CustomDoctorCardHeartButton> {
+class _CustomAddToFavButtonState extends State<CustomAddToFavButton> {
   bool _isTapped = false;
   @override
   Widget build(BuildContext context) {
@@ -30,11 +27,11 @@ class _CustomDoctorCardHeartButtonState
           },
           customBorder: const CircleBorder(),
           child: Padding(
-            padding: const EdgeInsets.all(6.0),
+            padding: const EdgeInsets.all(2.0),
             child: Icon(
-              _isTapped ? FontAwesomeIcons.solidHeart : FontAwesomeIcons.heart,
+              _isTapped ? Icons.star : Icons.star_outline,
               color: AppColors.primaryColor,
-              size: 18,
+              size: 24,
             ),
           ),
         ),

@@ -4,6 +4,8 @@ class AppAssets {
   
   static const String iconsAToZ = "assets/icons/a_to_z.svg";
 
+  static const String iconsAlarm = "assets/icons/alarm.svg";
+
   static const String iconsApple = "assets/icons/apple.svg";
 
   static const String iconsAward = "assets/icons/award.svg";

@@ -12,7 +12,7 @@ class DoctorCardQuestionMarkButton extends StatefulWidget {
 
 class _DoctorCardQuestionMarkButtonState
     extends State<DoctorCardQuestionMarkButton>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   OverlayEntry? _overlayEntry;
   final _layerLink = LayerLink();
   bool _isOverlayVisible = false;
@@ -126,7 +126,6 @@ class _DoctorCardQuestionMarkButtonState
       link: _layerLink,
       child: GestureDetector(
         onTap: _toggleOverylay,
-        behavior: HitTestBehavior.translucent,
         child: Container(
           decoration: const BoxDecoration(
             color: Colors.white,

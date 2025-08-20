@@ -12,12 +12,14 @@ class CustomIconButton extends StatelessWidget {
     this.width = 32,
     this.padding = 4,
     this.iconColor = Colors.white,
+    this.btnColor,
   });
 
   final VoidCallback onTap;
   final IconData? icon;
   final String? svgIcon;
   final Color iconColor;
+  final Color? btnColor;
   final double height;
   final double width;
   final double padding;
@@ -29,7 +31,7 @@ class CustomIconButton extends StatelessWidget {
       customBorder: const CircleBorder(),
       child: Container(
         decoration: BoxDecoration(
-          color: AppColors.secondaryColor,
+          color: btnColor ?? AppColors.secondaryColor,
           shape: BoxShape.circle,
         ),
         height: height,
